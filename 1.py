@@ -5,8 +5,25 @@ class Human():
         self.__age = age
     
     def get_age(self):
-        print('The age is {0}'.format(self.__age))
+        print(f"The age is {self.__age}")
 
-Teacher = Human('Andrew', 33)
+    def speak(self, phrase):
+        print(phrase)
 
-Teacher.get_age()
+class Mother(Human):
+    
+    def speak(self, phrase):
+        print(f"Mother said: {phrase}")
+
+class Father(Human):
+    
+    def speak(self, phrase):
+        print(f"Father said: {phrase}")
+
+class Child(Mother, Father):
+
+    pass
+
+Andrew = Child('Andrew', 33)
+
+Andrew.speak("good morning!")
